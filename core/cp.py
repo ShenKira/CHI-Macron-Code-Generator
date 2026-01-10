@@ -46,7 +46,7 @@ class CPExperiment(Experiment):
         )
 
     def to_macro(self, project_name: str) -> str:
-        fname = f"{project_name}_CP_{self.ic}_{self.ia}"
+        fname = f"{project_name}_CP_{self.ic}_{self.ia}_{self.eh}V"
         return f"""
 tech=cp
 ic={self.ic}
@@ -60,8 +60,8 @@ ta={self.ta}
 pn={self.pn}
 si={self.si}
 cl={self.cl}
+prioe
 run
 save:{fname}
 tsave:{fname}
-prioe
 """.strip()
